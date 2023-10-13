@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SYS_AutoUpdater.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BaseAtmosphereVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0.0.0</Value>
+    </Setting>
+    <Setting Name="BaseHekateVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0.0.0</Value>
+    </Setting>
+    <Setting Name="HekateVers" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Hekate Version:</Value>
+    </Setting>
+    <Setting Name="AtmosVers" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Atmosphere Version:</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
