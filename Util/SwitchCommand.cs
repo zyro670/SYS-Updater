@@ -46,5 +46,9 @@ namespace SYS_AutoUpdater
         public static byte[] GetBotbaseVersion(bool crlf = true) => Encode("getVersion", crlf);
         public static byte[] GetHekateVersion(bool crlf = true) => Encode("getVersion", crlf);
         public static byte[] GetGameInfo(string info, bool crlf = true) => Encode($"game {info}", crlf);
+        public static byte[] GetUnixTime(bool crlf = true) => Encode("getUnixTime", crlf);
+        public static byte[] ResetTime(bool crlf = true) => Encode("resetTime", crlf);
+        public static byte[] DaySkip(bool crlf = true) => Encode($"daySkip", crlf);
+        public static byte[] TimeSkip(bool crlf = true) => Encode($"timeSkip", crlf);
     }
 }

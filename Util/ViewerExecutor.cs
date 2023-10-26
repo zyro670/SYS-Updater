@@ -13,13 +13,13 @@ namespace SYS_AutoUpdater
         public int DelayFactor { get; set; } = 256;
         private int Read(byte[] buffer)
         {
-            int br = SYS_AutoUpdater.SwitchConnection.Receive(buffer, 0, 1, SocketFlags.None);
+            int br = SYS_HB_Updater.SwitchConnection.Receive(buffer, 0, 1, SocketFlags.None);
             while (buffer[br - 1] != (byte)'\n')
-                br += SYS_AutoUpdater.SwitchConnection.Receive(buffer, br, 1, SocketFlags.None);
+                br += SYS_HB_Updater.SwitchConnection.Receive(buffer, br, 1, SocketFlags.None);
             return br;
         }
 
-        public async Task<int> SendAsync(byte[] buffer) => await Task.Run(() => SYS_AutoUpdater.SwitchConnection.Send(buffer)).ConfigureAwait(false);
+        public async Task<int> SendAsync(byte[] buffer) => await Task.Run(() => SYS_HB_Updater.SwitchConnection.Send(buffer)).ConfigureAwait(false);
 
         private async Task<byte[]> ReadBytesFromCmdAsync(byte[] cmd, int length)
         {

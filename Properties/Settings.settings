@@ -14,5 +14,23 @@
     <Setting Name="AtmosVers" Type="System.String" Scope="User">
       <Value Profile="(Default)">Atmosphere Version:</Value>
     </Setting>
+    <Setting Name="ldnVers" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ldn_mitm Version:</Value>
+    </Setting>
+    <Setting Name="SysBotBaseVers" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Sys-BotBase Version:</Value>
+    </Setting>
+    <Setting Name="AMSSelected" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="HekateSelected" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ldnSelected" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SbbSelected" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -70,5 +70,77 @@ namespace SYS_AutoUpdater.Properties {
                 this["AtmosVers"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ldn_mitm Version:")]
+        public string ldnVers {
+            get {
+                return ((string)(this["ldnVers"]));
+            }
+            set {
+                this["ldnVers"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Sys-BotBase Version:")]
+        public string SysBotBaseVers {
+            get {
+                return ((string)(this["SysBotBaseVers"]));
+            }
+            set {
+                this["SysBotBaseVers"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AMSSelected {
+            get {
+                return ((bool)(this["AMSSelected"]));
+            }
+            set {
+                this["AMSSelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HekateSelected {
+            get {
+                return ((bool)(this["HekateSelected"]));
+            }
+            set {
+                this["HekateSelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ldnSelected {
+            get {
+                return ((bool)(this["ldnSelected"]));
+            }
+            set {
+                this["ldnSelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SbbSelected {
+            get {
+                return ((bool)(this["SbbSelected"]));
+            }
+            set {
+                this["SbbSelected"] = value;
+            }
+        }
     }
 }
