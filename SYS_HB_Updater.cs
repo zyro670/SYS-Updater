@@ -1,8 +1,6 @@
 using Octokit;
 using SYS_AutoUpdater.Properties;
 using System.IO.Compression;
-using System.Linq;
-using System.Net;
 using System.Net.Sockets;
 
 namespace SYS_AutoUpdater
@@ -27,6 +25,10 @@ namespace SYS_AutoUpdater
         private async void button1_Click(object sender, EventArgs e)
         {
             UpdateProgress(10, 100);
+            var switchPath = "latest-CFW-files";
+            if (Directory.Exists(switchPath))
+                Directory.Delete(switchPath, true);
+
             HttpClient httpClient;
             GitHubClient atmosphereClient = new(new ProductHeaderValue("Atmosphere"));
             var AMSreleases = await atmosphereClient.Repository.Release.GetAll("Atmosphere-NX", "Atmosphere");
@@ -48,11 +50,11 @@ namespace SYS_AutoUpdater
             {
                 if (Directory.Exists(amsPath + ".zip"))
                 {
-                    ZipFile.ExtractToDirectory($"{amsPath}.zip", amsPath);
+                    ZipFile.ExtractToDirectory($"{amsPath}.zip", switchPath);
                     Directory.Delete(amsPath + ".zip", true);
                 }
                 if (!Directory.Exists(amsPath + ".zip"))
-                    ZipFile.ExtractToDirectory($"{amsPath}.zip", amsPath);
+                    ZipFile.ExtractToDirectory($"{amsPath}.zip", switchPath);
             }
 
             UpdateProgress(40, 100);
@@ -75,11 +77,11 @@ namespace SYS_AutoUpdater
             {
                 if (Directory.Exists(hekPath + ".zip"))
                 {
-                    ZipFile.ExtractToDirectory($"{hekPath}.zip", hekPath);
+                    ZipFile.ExtractToDirectory($"{hekPath}.zip", switchPath);
                     Directory.Delete(hekPath + ".zip", true);
                 }
                 if (!Directory.Exists(hekPath))
-                    ZipFile.ExtractToDirectory($"{hekPath}.zip", hekPath);
+                    ZipFile.ExtractToDirectory($"{hekPath}.zip", switchPath);
             }
 
             UpdateProgress(60, 100);
@@ -102,11 +104,11 @@ namespace SYS_AutoUpdater
             {
                 if (Directory.Exists(ldnPath + ".zip"))
                 {
-                    ZipFile.ExtractToDirectory($"{ldnPath}.zip", ldnPath);
+                    ZipFile.ExtractToDirectory($"{ldnPath}.zip", switchPath);
                     Directory.Delete(ldnPath + ".zip", true);
                 }
                 if (!Directory.Exists(ldnPath + ".zip"))
-                    ZipFile.ExtractToDirectory($"{ldnPath}.zip", ldnPath);
+                    ZipFile.ExtractToDirectory($"{ldnPath}.zip", switchPath);
             }
 
             UpdateProgress(80, 100);
@@ -129,11 +131,16 @@ namespace SYS_AutoUpdater
             {
                 if (Directory.Exists(sbbPath + ".zip"))
                 {
-                    ZipFile.ExtractToDirectory($"{sbbPath}.zip", sbbPath);
-                    Directory.Delete(sbbPath + ".zip", true);
+                    ZipFile.ExtractToDirectory($"{sbbPath}.zip", switchPath + "\\atmosphere\\contents");
+                    Directory.Move(switchPath + "\\atmosphere\\contents\\usb-botbaseZ\\430000000000000B", switchPath + "\\atmosphere\\contents\\430000000000000B");
+                    Directory.Delete(switchPath + "\\atmosphere\\contents\\usb-botbaseZ", true);
                 }
                 if (!Directory.Exists(sbbPath + ".zip"))
-                    ZipFile.ExtractToDirectory($"{sbbPath}.zip", sbbPath);
+                {
+                    ZipFile.ExtractToDirectory($"{sbbPath}.zip", switchPath + "\\atmosphere\\contents");
+                    Directory.Move(switchPath + "\\atmosphere\\contents\\usb-botbaseZ\\430000000000000B", switchPath + "\\atmosphere\\contents\\430000000000000B");
+                    Directory.Delete(switchPath + "\\atmosphere\\contents\\usb-botbaseZ", true);
+                }
             }
 
             UpdateProgress(90, 100);
