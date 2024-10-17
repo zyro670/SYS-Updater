@@ -132,11 +132,14 @@ namespace SYS_AutoUpdater
                 if (Directory.Exists(sbbPath + ".zip"))
                 {
                     ZipFile.ExtractToDirectory($"{sbbPath}.zip", switchPath + "\\atmosphere\\contents");
-                    Directory.Delete(switchPath + "\\atmosphere\\contents\\usb-botbaseZ", true);
+                    Directory.Move(switchPath + $"\\atmosphere\\contents\\usb-botbaseZ\\430000000000000B", switchPath + "\\atmosphere\\contents\\430000000000000B");
+                    Directory.Delete(switchPath + $"\\atmosphere\\contents\\usb-botbaseZ", true);
                 }
                 if (!Directory.Exists(sbbPath + ".zip"))
                 {
                     ZipFile.ExtractToDirectory($"{sbbPath}.zip", switchPath + "\\atmosphere\\contents");
+                    Directory.Move(switchPath + $"\\atmosphere\\contents\\usb-botbaseZ\\430000000000000B", switchPath + "\\atmosphere\\contents\\430000000000000B");
+                    Directory.Delete(switchPath + $"\\atmosphere\\contents\\usb-botbaseZ", true);
                 }
             }
 
